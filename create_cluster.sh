@@ -60,6 +60,7 @@ nodes:
   - containerPort: 30080
     hostPort: 30070
 - role: worker
+- role: worker
 containerdConfigPatches:
 - |-
   [plugins."io.containerd.grpc.v1.cri".registry.mirrors."localhost:${reg_port}"]
