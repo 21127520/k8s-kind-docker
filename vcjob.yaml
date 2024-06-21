@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job-9
+spec:
+  template:
+    spec:
+      containers:
+      - name: my-container
+        image: nginx:latest
+        resources:
+          requests:
+            cpu: 2  # Request 0.5 CPU core
+          limits:
+            cpu: 3  # Limit to 1 CPU core
+      restartPolicy: Never
+  backoffLimit: 4

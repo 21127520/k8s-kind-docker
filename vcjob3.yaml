@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-7
+spec:
+  template:
+    spec:
+      containers:
+      - name: my-container
+        image: busybox
+        command:
+        - sleep
+        - "90"  # Đặt thời gian sleep 90 giây (tương đương 1.5 phút)
+      restartPolicy: Never  # Chỉ chạy job một lần
+  backoffLimit: 4  # Số lần thử lại tối đa nếu job thất bại
